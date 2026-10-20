@@ -6,32 +6,32 @@
 <meta name="description" content="d9 — la couche de données gouvernée, restée open source. Le fork open source de Directus : API REST/GraphQL instantanée sur votre base, gouvernance fine des droits, auto-hébergeable et conforme UE.">
 <meta property="og:title" content="d9 — la couche de données gouvernée, restée open source">
 <meta property="og:description" content="Le fork open source de Directus. Branchez votre base, gouvernez l'accès.">
-<meta name="theme-color" content="#7c2234">
+<meta name="theme-color" content="#6644ff">
 <script>try{if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('anime-on');}catch(e){}</script>
 <title>d9 — la couche de données gouvernée, restée open source</title>
 <style>
   :root{
-    --paper:#f6f2ec; --surface:#fffdfa; --surface-2:#f1eae1;
-    --ink:#1e1417; --muted:#6a5a5e; --faint:#9a8a8d; --line:#e6ddd3;
-    --wine:#7c2234; --wine-bright:#a3293f; --wine-soft:#f3e4e3;
-    --brass:#9a7736; --brass-soft:#efe6d2;
-    --ok:#3f7a5a;
+    --paper:#f3f2fb; --surface:#ffffff; --surface-2:#f1effb;
+    --ink:#191530; --muted:#5e597b; --faint:#938db0; --line:#e6e3f3;
+    --wine:#6644ff; --wine-bright:#4422dd; --wine-soft:#ece9ff;
+    --brass:#7b63f5; --brass-soft:#efecfe;
+    --ok:#2ecda7;
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --paper:#17100f; --surface:#1f1517; --surface-2:#271a1c;
-      --ink:#f3e9e4; --muted:#b39a9d; --faint:#7a6468; --line:#352427;
-      --wine:#c8536a; --wine-bright:#e06a81; --wine-soft:#2c171c;
-      --brass:#cda45b; --brass-soft:#2a2113; --ok:#67c295;
+      --paper:#0f0e1a; --surface:#18162a; --surface-2:#1f1c34;
+      --ink:#ececf6; --muted:#a39ec0; --faint:#6f6990; --line:#272339;
+      --wine:#8b73ff; --wine-bright:#6644ff; --wine-soft:#1d1836;
+      --brass:#a594ff; --brass-soft:#231d3e; --ok:#48c6ab;
     }
   }
   :root[data-theme="light"]{
-    --paper:#f6f2ec; --surface:#fffdfa; --surface-2:#f1eae1; --ink:#1e1417; --muted:#6a5a5e; --faint:#9a8a8d; --line:#e6ddd3;
-    --wine:#7c2234; --wine-bright:#a3293f; --wine-soft:#f3e4e3; --brass:#9a7736; --brass-soft:#efe6d2; --ok:#3f7a5a;
+    --paper:#f3f2fb; --surface:#ffffff; --surface-2:#f1effb; --ink:#191530; --muted:#5e597b; --faint:#938db0; --line:#e6e3f3;
+    --wine:#6644ff; --wine-bright:#4422dd; --wine-soft:#ece9ff; --brass:#7b63f5; --brass-soft:#efecfe; --ok:#2ecda7;
   }
   :root[data-theme="dark"]{
-    --paper:#17100f; --surface:#1f1517; --surface-2:#271a1c; --ink:#f3e9e4; --muted:#b39a9d; --faint:#7a6468; --line:#352427;
-    --wine:#c8536a; --wine-bright:#e06a81; --wine-soft:#2c171c; --brass:#cda45b; --brass-soft:#2a2113; --ok:#67c295;
+    --paper:#0f0e1a; --surface:#18162a; --surface-2:#1f1c34; --ink:#ececf6; --muted:#a39ec0; --faint:#6f6990; --line:#272339;
+    --wine:#8b73ff; --wine-bright:#6644ff; --wine-soft:#1d1836; --brass:#a594ff; --brass-soft:#231d3e; --ok:#48c6ab;
   }
 
   *{box-sizing:border-box}
@@ -59,8 +59,9 @@
   .glyph{
     width:40px; height:40px; border-radius:10px; background:var(--wine); color:#fff;
     display:grid; place-items:center; font-weight:800; font-size:19px; letter-spacing:-.04em;
-    font-family:ui-monospace,Menlo,monospace; box-shadow:0 2px 0 var(--brass);
+    font-family:ui-monospace,Menlo,monospace; box-shadow:0 2px 0 var(--brass); overflow:hidden;
   }
+  .glyph svg{width:24px; height:24px; display:block}
   .brand b{font-size:17px; letter-spacing:-.01em}
   .brand span{display:block; font-size:11px; color:var(--faint); font-family:ui-monospace,Menlo,monospace; letter-spacing:.04em; margin-top:-2px}
   .barlinks{display:flex; gap:20px; align-items:center; font-size:13.5px}
@@ -132,12 +133,11 @@
   @media(max-width:760px){.step .arrow{display:none}}
 
   /* ---- quickstart ---- */
-  .qs{margin-top:20px; background:var(--ink); color:#f3e9e4; border-radius:15px; padding:clamp(18px,3vw,26px); position:relative; overflow:hidden}
-  :root[data-theme="light"] .qs, :root:not([data-theme="dark"]) .qs{background:#20151a}
-  .qs .lbl{font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#cda45b; margin-bottom:12px}
+  .qs{margin-top:20px; background:#17132b; color:#efecfb; border:1px solid #2a2450; border-radius:15px; padding:clamp(18px,3vw,26px); position:relative; overflow:hidden}
+  .qs .lbl{font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#a594ff; margin-bottom:12px}
   .qs pre{margin:0; overflow-x:auto}
-  .qs code{font-family:ui-monospace,"SF Mono",Menlo,monospace; font-size:13.5px; line-height:1.8; color:#f1e6df}
-  .qs .c1{color:#e8869a}.qs .c2{color:#d9b877}.qs .cmt{color:#8a7278}
+  .qs code{font-family:ui-monospace,"SF Mono",Menlo,monospace; font-size:13.5px; line-height:1.8; color:#e9e5fb}
+  .qs .c1{color:#b9a7ff}.qs .c2{color:#8f79e8}.qs .cmt{color:#746e9c}
 
   /* ---- footer ---- */
   footer{margin:clamp(44px,7vw,80px) 0 40px; padding-top:22px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; align-items:center}
@@ -155,7 +155,17 @@
 
   <nav class="bar">
     <div class="brand">
-      <div class="glyph reveal">d9</div>
+      <div class="glyph reveal"><svg viewBox="0 0 722 722" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_34_90)">
+<path d="M327 127.671C411.057 127.671 485.425 169.156 530.747 232.769C529.512 264.098 526.597 292.835 521.935 319.321C527.409 337.706 530.349 357.182 530.349 377.345C530.349 435.992 505.477 488.828 465.708 525.887C505.273 488.844 530 436.146 530 377.671C530 265.557 439.114 174.671 327 174.671C214.886 174.671 124 265.557 124 377.671C124 489.785 214.886 580.671 327 580.671C328.852 580.671 330.697 580.645 332.537 580.596C310.132 593.405 285.362 605.696 258 617.6C280.02 623.944 303.287 627.345 327.349 627.345C393.512 627.345 453.671 601.642 498.389 559.678C453.636 601.836 393.335 627.671 327 627.671C188.929 627.671 77 515.742 77 377.671C77 239.6 188.929 127.671 327 127.671ZM364.049 611.172L361.714 612.56C363.275 611.636 364.826 610.709 366.368 609.779C365.597 610.244 364.824 610.709 364.049 611.172ZM465.708 525.887C430.668 558.692 383.991 579.218 332.537 580.596C332.732 580.484 332.928 580.374 333.122 580.263C384.312 578.833 430.762 558.451 465.708 525.887ZM530.778 232C560.094 272.958 577.349 323.136 577.349 377.345C577.349 449.253 546.989 514.07 498.389 559.678C546.786 514.087 577 449.407 577 377.671C577 323.657 559.87 273.645 530.747 232.769C530.757 232.513 530.768 232.256 530.778 232ZM456.046 541.287L454.356 542.945C454.922 542.393 455.485 541.84 456.046 541.286L457.722 539.621C457.165 540.177 456.607 540.733 456.046 541.287ZM327 227.671C409.843 227.671 477 294.828 477 377.671C477 460.514 409.843 527.671 327 527.671C244.157 527.671 177 460.514 177 377.671C177 294.828 244.157 227.671 327 227.671ZM562.064 334.957C561.856 336.041 561.646 337.121 561.433 338.199C561.646 337.121 561.856 336.041 562.064 334.957ZM562.562 332.329C562.501 332.656 562.439 332.982 562.378 333.308C562.439 332.982 562.501 332.656 562.562 332.329ZM563.025 329.829C562.979 330.086 562.93 330.343 562.883 330.6C562.946 330.258 563.009 329.916 563.071 329.574L563.025 329.829Z" fill="white"/>
+<path d="M571.2 125.908C554.448 -163.157 597.585 141.142 597.585 141.142C661.5 570 661.5 570 287.921 677.496C287.921 677.496 12.4233 766.63 261.535 662.262C510.647 557.894 587.951 414.973 571.2 125.908Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_34_90">
+<rect width="722" height="722" fill="white"/>
+</clipPath>
+</defs>
+</svg></div>
       <div class="bt reveal"><b>d9</b><span>by La Webcapsule</span></div>
     </div>
     <div class="barlinks reveal">
