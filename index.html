@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="d9 — la couche de données gouvernée, restée open source. Le fork open source de Directus : API REST/GraphQL instantanée sur votre base, gouvernance fine des droits, auto-hébergeable et conforme UE.">
-<meta property="og:title" content="d9 — la couche de données gouvernée, restée open source">
-<meta property="og:description" content="Le fork open source de Directus. Branchez votre base, gouvernez l'accès.">
+<meta name="description" content="d9 — le fork open source de Directus, expliqué en 3 idées : Map (des API sur votre base), Key (contrôle des accès), Pen (traçabilité complète, agents IA compris).">
+<meta property="og:title" content="d9 — Map · Key · Pen">
+<meta property="og:description" content="Des API sur votre base, le contrôle des accès, et la traçabilité complète. Le fork open source de Directus.">
 <meta name="theme-color" content="#6644ff">
 <script>try{if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('anime-on');}catch(e){}</script>
 <title>d9 — la couche de données gouvernée, restée open source</title>
@@ -116,9 +116,14 @@
   .pillars{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
   @media(max-width:760px){.pillars{grid-template-columns:1fr}}
   .pill{background:var(--surface); border:1px solid var(--line); border-radius:15px; padding:22px; position:relative}
-  .pill .ic{width:34px;height:34px;border-radius:9px; background:var(--wine-soft); color:var(--wine); display:grid; place-items:center; font-size:17px; margin-bottom:14px}
+  .pill .ic{width:38px;height:38px;border-radius:10px; background:var(--wine-soft); color:var(--wine); display:grid; place-items:center; font-size:17px; margin-bottom:14px}
+  .pill .ic svg{width:21px; height:21px; display:block}
+  .pill .phead{display:flex; align-items:center; gap:12px; margin-bottom:14px}
+  .pill .phead .ic{margin-bottom:0}
+  .pill .kw{font-family:ui-monospace,Menlo,monospace; font-size:12px; letter-spacing:.18em; font-weight:700; color:var(--wine)}
   .pill h3{margin:0 0 7px; font-size:17px; letter-spacing:-.01em}
   .pill p{margin:0; font-size:14px; color:var(--muted); line-height:1.5}
+  .pill strong{color:var(--ink); font-weight:600}
   .pill .tags{margin-top:13px; display:flex; flex-wrap:wrap; gap:6px}
   .pill .tags span{font-family:ui-monospace,Menlo,monospace; font-size:11px; color:var(--brass); background:var(--brass-soft); padding:3px 8px; border-radius:6px}
 
@@ -178,7 +183,7 @@
   <header class="hero">
     <span class="kick reveal"><i></i>Open source · auto-hébergeable · conforme UE</span>
     <h1 class="reveal">Branchez votre base. <em>Gouvernez<span class="uline" aria-hidden="true"></span></em> l'accès.</h1>
-    <p class="sub reveal">d9 est le fork open source de Directus&nbsp;: une API REST/GraphQL instantanée sur votre base, avec une gouvernance fine des droits — <b>par rôle, par ligne, par champ</b>. Là où l'original se referme, d9 reste ouvert.</p>
+    <p class="sub reveal">d9 est le fork open source de Directus. Branchez une base existante et obtenez des API prêtes à l'emploi, avec le <b>contrôle des accès</b> et la <b>traçabilité</b> intégrés — pour vos apps, vos équipes et vos <b>agents IA</b>.</p>
     <div class="cta reveal">
       <a class="btn btn-primary" href="https://github.com/LaWebcapsule/d9">Voir sur GitHub →</a>
       <a class="btn btn-ghost" href="https://hub.docker.com/r/lawebcapsule/d9"><span class="mono">docker compose up</span></a>
@@ -194,46 +199,52 @@
   </section>
 
   <div class="sec-head">
-    <span class="n">01</span><h2>Ce que d9 vous donne</h2><span class="line"></span>
+    <span class="n">01</span><h2>Ce que fait d9, en trois idées</h2><span class="line"></span>
   </div>
   <section class="pillars">
     <div class="pill">
-      <div class="ic">⎇</div>
-      <h3>Vraiment open</h3>
-      <p>Pas de clé de licence, pas de mur payant, pas de verrou. Vous clonez, vous déployez, vous possédez votre instance de bout en bout.</p>
-      <div class="tags"><span>self-hosted</span><span>sans clé de licence</span><span>Docker</span></div>
+      <div class="phead">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 7 9 4Z"/><path d="M9 4v13M15 7v12.5"/></svg></span>
+        <span class="kw">MAP</span>
+      </div>
+      <h3>Branchez une base, obtenez des API</h3>
+      <p>Une base SQL — ou même un simple Excel / Google&nbsp;Sheets — et d9 construit instantanément des API par-dessus. C'est votre <strong>carte d'accès</strong> aux données, sans écrire de backend.</p>
     </div>
     <div class="pill">
-      <div class="ic">⚖︎</div>
-      <h3>Gouvernance fine</h3>
-      <p>Droits par rôle, par ligne et par champ, pilotés depuis le studio. Chaque accès — app, service ou utilisateur — passe par la même couche de permissions.</p>
-      <div class="tags"><span>RBAC ligne+champ</span><span>policies</span><span>studio</span></div>
+      <div class="phead">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><path d="M11 11l8.5 8.5M16.5 16.5l2-2M19 19l2-2"/></svg></span>
+        <span class="kw">KEY</span>
+      </div>
+      <h3>Les bons accès pour chacun</h3>
+      <p>Décidez précisément qui peut voir et modifier quoi. Et <strong>copiez vos rôles d'un environnement à l'autre</strong> pour garder exactement les mêmes règles partout.</p>
     </div>
     <div class="pill">
-      <div class="ic">◴</div>
-      <h3>Perf &amp; conformité UE</h3>
-      <p>Pensé pour la performance et la souveraineté des données&nbsp;: hébergement où vous voulez, conformité RGPD native, zéro dépendance à un SaaS fermé.</p>
-      <div class="tags"><span>RGPD</span><span>souverain</span><span>sans lock-in</span></div>
+      <div class="phead">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6L10 20l-6 1 1-6L14 4Z"/><path d="M13 5l6 6"/></svg></span>
+        <span class="kw">PEN</span>
+      </div>
+      <h3>Tout est tracé, de bout en bout</h3>
+      <p>Chaque action est enregistrée&nbsp;: qui a fait quoi, et quand. Une <strong>traçabilité complète</strong> — vos utilisateurs, vos équipes et vos <strong>agents IA</strong> compris.</p>
     </div>
   </section>
 
   <div class="sec-head">
-    <span class="n">02</span><h2>De la base à l'API gouvernée en 3 temps</h2><span class="line"></span>
+    <span class="n">02</span><h2>De votre base à vos API, en 3 temps</h2><span class="line"></span>
   </div>
   <section class="steps">
     <div class="step">
       <div class="s">ÉTAPE 1</div><h4>Branchez votre base</h4>
-      <p>Votre base PostgreSQL, MySQL ou MariaDB&nbsp;: d9 s'y connecte sans migration ni copie de données.</p>
+      <p>PostgreSQL, MySQL, MariaDB — ou un export Excel / Sheets. d9 s'y connecte sans rien déplacer.</p>
       <div class="arrow">→</div>
     </div>
     <div class="step">
-      <div class="s">ÉTAPE 2</div><h4>Introspection auto</h4>
-      <p>Tables, colonnes et relations deviennent un modèle de données exploitable immédiatement.</p>
+      <div class="s">ÉTAPE 2</div><h4>d9 lit sa structure</h4>
+      <p>Vos tables, colonnes et liens sont repris automatiquement, prêts à l'emploi.</p>
       <div class="arrow">→</div>
     </div>
     <div class="step">
-      <div class="s">ÉTAPE 3</div><h4>API + droits</h4>
-      <p>REST, GraphQL et SDK, derrière une couche de permissions que vous pilotez depuis le studio.</p>
+      <div class="s">ÉTAPE 3</div><h4>Vos API + vos règles</h4>
+      <p>REST et GraphQL, avec les accès que vous définissez et le journal des actions activé.</p>
     </div>
   </section>
 
